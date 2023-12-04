@@ -36,14 +36,14 @@ namespace EasyNetQ
                 var connectionFactory = new ConnectionFactory();
                 if (connectionConfiguration.AMQPConnectionString != null)
                 {
-                    connectionFactory.uri = connectionConfiguration.AMQPConnectionString;
+                    connectionFactory.Uri = connectionConfiguration.AMQPConnectionString;
                 }
 
                 connectionFactory.HostName = hostConfiguration.Host;
-                
+
                 if(connectionFactory.VirtualHost == "/")
                     connectionFactory.VirtualHost = Configuration.VirtualHost;
-                
+
                 if(connectionFactory.UserName == "guest")
                     connectionFactory.UserName = Configuration.UserName;
 
@@ -56,8 +56,8 @@ namespace EasyNetQ
                 if (Configuration.Ssl.Enabled)
                     connectionFactory.Ssl = Configuration.Ssl;
 
-                connectionFactory.RequestedHeartbeat = Configuration.RequestedHeartbeat;
-                connectionFactory.ClientProperties = ConvertToHashtable(Configuration.ClientProperties);
+                connectionFactory.RequestedHeartbeat = TimeSpan.FromTicks(Configuration.RequestedHeartbeat);
+                connectionFactory.ClientProperties = (IDictionary<string, object>)Configuration.ClientProperties;
                 clusterHostSelectionStrategy.Add(new ConnectionFactoryInfo(connectionFactory, hostConfiguration));
             }
         }

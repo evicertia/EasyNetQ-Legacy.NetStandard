@@ -1,11 +1,13 @@
-﻿using System;
-using System.Collections;
+﻿using EasyNetQ.Consumer;
+using EasyNetQ.FluentConfiguration;
+using EasyNetQ.Topology;
+
+using RabbitMQ.Client;
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using EasyNetQ.Consumer;
-using EasyNetQ.FluentConfiguration;
-using EasyNetQ.Topology;
 
 namespace EasyNetQ
 {
@@ -22,11 +24,11 @@ namespace EasyNetQ
 
         public RabbitAdvancedBus(
             IConnectionFactory connectionFactory,
-            SerializeType serializeType, 
-            ISerializer serializer, 
+            SerializeType serializeType,
+            ISerializer serializer,
             IConsumerFactory consumerFactory,
-            IEasyNetQLogger logger, 
-            Func<string> getCorrelationId, 
+            IEasyNetQLogger logger,
+            Func<string> getCorrelationId,
             IMessageValidationStrategy messageValidationStrategy)
         {
             Preconditions.CheckNotNull(connectionFactory, "connectionFactory");
@@ -89,9 +91,9 @@ namespace EasyNetQ
                 return onMessage(message, messageRecievedInfo);
             });
         }
- 
+
         public virtual void Consume(IQueue queue, Func<Byte[], MessageProperties, MessageReceivedInfo, Task> onMessage)
-        {      
+        {
             Preconditions.CheckNotNull(queue, "queue");
             Preconditions.CheckNotNull(onMessage, "onMessage");
 
@@ -118,12 +120,12 @@ namespace EasyNetQ
         // ---------------------------------- Exchange / Queue / Binding -----------------------------------
 
         public IQueue QueueDeclare(
-            string name, 
-            bool passive = false, 
-            bool durable = true, 
+            string name,
+            bool passive = false,
+            bool durable = true,
             bool exclusive = false,
-            bool autoDelete = false, 
-            uint perQueueTtl = UInt32.MaxValue, 
+            bool autoDelete = false,
+            uint perQueueTtl = UInt32.MaxValue,
             uint expires = UInt32.MaxValue)
         {
             Preconditions.CheckNotNull(name, "name");
@@ -147,7 +149,7 @@ namespace EasyNetQ
                         arguments.Add("x-expires", expires);
                     }
 
-                    model.QueueDeclare(name, durable, exclusive, autoDelete, (IDictionary)arguments);
+                    model.QueueDeclare(name, durable, exclusive, autoDelete, arguments);
 
                     logger.DebugWrite("Declared Queue: '{0}' durable:{1}, exclusive:{2}, autoDelte:{3}, args:{4}",
                         name, durable, exclusive, autoDelete, WriteArguments(arguments));
@@ -209,10 +211,10 @@ namespace EasyNetQ
         }
 
         public IExchange ExchangeDeclare(
-            string name, 
-            string type, 
-            bool passive = false, 
-            bool durable = true, 
+            string name,
+            string type,
+            bool passive = false,
+            bool durable = true,
             bool autoDelete = false,
             bool @internal = false)
         {

@@ -29,14 +29,14 @@ namespace EasyNetQ
             }
         }
 
-        public void SuccessfulPublish(IModel channel, BasicAckEventArgs args)
+        public void SuccessfulPublish(object channel, BasicAckEventArgs args)
         {
             Preconditions.CheckNotNull(args, "args");
 
             ProcessArgsAndRun(args.Multiple, args.DeliveryTag, x => x.Success());
         }
 
-        public void FailedPublish(IModel channel, BasicNackEventArgs args)
+        public void FailedPublish(object channel, BasicNackEventArgs args)
         {
             Preconditions.CheckNotNull(args, "args");
 

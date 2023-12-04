@@ -95,7 +95,7 @@ namespace EasyNetQ
             }
             else
             {
-                logger.ErrorWrite("Failed to connected to any Broker. Retrying in {0} ms\n", 
+                logger.ErrorWrite("Failed to connected to any Broker. Retrying in {0} ms\n",
                     connectAttemptIntervalMilliseconds);
                 StartTryToConnect();
             }
@@ -111,7 +111,7 @@ namespace EasyNetQ
                 exception.Message);
         }
 
-        void OnConnectionShutdown(IConnection _, ShutdownEventArgs reason)
+        void OnConnectionShutdown(object sender, ShutdownEventArgs reason)
         {
             if (disposed) return;
             OnDisconnected();

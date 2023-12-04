@@ -111,7 +111,7 @@ namespace EasyNetQ
 
                 channel.BasicPublish(
                     exchange.Name,      // exchange
-                    routingKey,         // routingKey 
+                    routingKey,         // routingKey
                     defaultProperties,  // basicProperties
                     messageBody);       // body
 
