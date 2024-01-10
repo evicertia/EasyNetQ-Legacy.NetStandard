@@ -1,3 +1,14 @@
+**Customized Version for EasyNetQ library (https://github.com/EasyNetQ/EasyNetQ) from legacy version (0.14.1.121) but converted to use NetStandard2.0 Framework to be able to
+use library with dotnet.**
+
+
+**********************************
+
+
+----------------------------------
+###       FORMER README:       ###
+##################################
+
 A Nice .NET API for RabbitMQ
 
 Development is sponsored by travel industry experts [15below](http://15below.com/)
