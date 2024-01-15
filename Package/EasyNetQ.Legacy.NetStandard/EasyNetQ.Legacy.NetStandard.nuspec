@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <metadata>
+    <id>EasyNetQ.Legacy.NetStandard</id>
+    <!-- Version gets updated from EasyNetQ.dll version number during the build's packaging process -->
+    <version>0.14.1.121-legacy-0</version>
+    <title>EasyNetQ.Legacy.NetStandard</title>
+    <authors>Mike Hadlow, Chris Edwards, A Hazelwood, Evicertia</authors>
+    <owners>Mike Hadlow, Evicertia</owners>
+    <projectUrl>https://github.com/evicertia/EasyNetQ.Legacy.NetStandard</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>EasyNetQ Legacy Version by Evicertia for retro-compatibility with NetStd 2.0</description>
+    <releaseNotes>
+    </releaseNotes>
+    <copyright>Copyright Evicertia 2023</copyright>
+    <tags>RabbitMQ Messaging AMQP</tags>
+    <dependencies>
+      <dependency id="RabbitMQ.Client" version="[3.1.1.0]" />
+      <dependency id="Newtonsoft.Json" version="4.5" />
+    </dependencies>
+  </metadata>
+</package>
