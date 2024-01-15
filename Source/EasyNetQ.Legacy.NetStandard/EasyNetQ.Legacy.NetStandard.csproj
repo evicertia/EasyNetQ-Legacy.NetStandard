@@ -7,12 +7,8 @@
     <Company>Evicertia</Company>
     <Product>EasyNetQ.Legacy.NetStandard</Product>
     <Copyright>Copyright © Evicertia 2023</Copyright>
+    <Version>0.14.1-legacy.0</Version>
   </PropertyGroup>
-  <ItemGroup>
-    <Compile Include="..\Version.cs">
-      <Link>Properties\Version.cs</Link>
-    </Compile>
-  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="RabbitMQ.Client" Version="6.7.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
