@@ -30,6 +30,8 @@ deploy:
   - provider: NuGet
     api_key:
       secure: DHHLD6VN/tOostoHI6TBXznoSBUKTDbjWAThjfbRMECgfTH8MkoKI2M1UyPwbXaY
+    on:
+      branch: master
 notifications:
   - provider: Email
     to:
