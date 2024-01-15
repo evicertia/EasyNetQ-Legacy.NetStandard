@@ -3,10 +3,10 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <OutputType>Library</OutputType>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <AssemblyTitle>EasyNetQ</AssemblyTitle>
-    <Company>EasyNetQ</Company>
-    <Product>EasyNetQ</Product>
-    <Copyright>Copyright © EasyNetQ 2011</Copyright>
+    <AssemblyTitle>EasyNetQ.Legacy.NetStandard</AssemblyTitle>
+    <Company>Evicertia</Company>
+    <Product>EasyNetQ.Legacy.NetStandard</Product>
+    <Copyright>Copyright © Evicertia 2023</Copyright>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="..\Version.cs">
