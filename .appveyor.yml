@@ -1,4 +1,4 @@
-version: 0.14.1.121-legacy-{build}
+version: 0.14.1.121{build}
 skip_tags: true
 image: Visual Studio 2022
 configuration: Release
