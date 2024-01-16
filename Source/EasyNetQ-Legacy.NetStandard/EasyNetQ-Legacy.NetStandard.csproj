@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Title>EasyNetQ-Legacy.NetStandard</Title>
-    <Description>EasyNetQ Legacy version upgraded to NetStd 2.0</Description>
+    <Description>EasyNetQ Legacy version (0.14.1.121) upgraded to NetStd 2.0</Description>
     <TargetFramework>netstandard2.0</TargetFramework>
     <OutputType>Library</OutputType>
     <Company>Evicertia</Company>
