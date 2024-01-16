@@ -20,7 +20,7 @@ before_build:
       Tools\UnixUtils\sed.exe -i -e "s|VERSION_STRING|%APPVEYOR_REPO_BRANCH%:%APPVEYOR_REPO_COMMIT%|g" .msbuild\custom.targets
 
       REM Restoring NuGet packages..
-      appveyor-retry nuget restore ./Source/EasyNetQ.Legacy.NetStandard.sln
+      appveyor-retry nuget restore ./Source/EasyNetQ-Legacy.NetStandard.sln
 build:
   publish_nuget: true
   publish_nuget_symbols: true
@@ -29,7 +29,9 @@ build:
 deploy:
   - provider: NuGet
     api_key:
-      secure: GvFdI7Y0CTdUSiMeFOz60u7LSTIzGWW0DDS7X5MKX5TgOCMcFJ++QSMEQFLdzotY
+      secure: DHHLD6VN/tOostoHI6TBXznoSBUKTDbjWAThjfbRMECgfTH8MkoKI2M1UyPwbXaY
+    on:
+      branch: master
 notifications:
   - provider: Email
     to:
