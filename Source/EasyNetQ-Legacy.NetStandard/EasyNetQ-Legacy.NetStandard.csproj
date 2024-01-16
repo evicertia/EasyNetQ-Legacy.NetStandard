@@ -1,17 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <Title>EasyNetQ-Legacy.NetStandard</Title>
+    <Description>EasyNetQ Legacy version upgraded to NetStd 2.0</Description>
     <TargetFramework>netstandard2.0</TargetFramework>
     <OutputType>Library</OutputType>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <AssemblyTitle>EasyNetQ-Legacy.NetStandard</AssemblyTitle>
     <Company>Evicertia</Company>
-    <Product>EasyNetQ-Legacy.NetStandard</Product>
-    <Copyright>Copyright © Evicertia 2023</Copyright>
-    <Version>0.14.1-legacy.1</Version>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="RabbitMQ.Client" Version="6.7.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="8.0.0" />
   </ItemGroup>
+  <Import Project="$(ProjectDir)..\..\.msbuild\custom.targets" />
 </Project>
